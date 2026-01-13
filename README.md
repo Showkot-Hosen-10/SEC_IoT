@@ -132,6 +132,56 @@ Your Arduino sketch uses:
 #include <ArduinoJson.h>
 #include <DHT.h>
 ```
+## 5️⃣ Board & Port Configuration
+
+Before uploading the firmware, configure the Arduino IDE as follows:
+
+- **Board:** ESP32 Dev Module  
+- **Upload Speed:** 115200  
+- **CPU Frequency:** 240MHz  
+- **Flash Frequency:** 80MHz  
+- **Flash Mode:** QIO  
+- **Port:** Select the correct COM port connected to ESP32  
+
+---
+
+## 6️⃣ Optional: Auto-Install via Arduino CLI (Advanced)
+
+If you prefer automation using **Arduino CLI**, run the following commands:
+
+```bash
+arduino-cli core update-index
+arduino-cli core install esp32:esp32
+
+arduino-cli lib install "DHT sensor library"
+arduino-cli lib install "Adafruit Unified Sensor"
+arduino-cli lib install "ArduinoJson"
+```
+7️⃣ Network Requirements (IMPORTANT)
+
+- ESP32 and Flask server must be connected to the same 2.4 GHz WiFi
+- Use the same SSID and WiFi password
+- System firewall must allow port 5000
+
+Example firmware configuration:
+- const char* serverURL = "http://<SERVER-IP>:5000/api/add_data";
+
+8️⃣ Common Errors & Fixes
+| Error	| Fix |
+|-------------|--------|
+| HTTP Response -1 | Flask server not reachable / firewall blocking |
+| WiFi not connecting	| 5GHz network used (ESP32 supports only 2.4GHz) |
+| DHT returns NaN	| Wrong pin connection or incorrect power |
+| ESP32 not detected |Install USB-to-UART driver |
+
+✅ Final Checklist
+
+ESP32 board installed
+All required libraries installed
+Correct COM port selected
+Flask server running
+Same WiFi network for ESP32 & server
+
 ## 🗂️ Project Folder Structure
 
 ```
@@ -317,7 +367,8 @@ Fork, modify, and experiment responsibly.
 ## 👤 Author & Credits
 
 **Project Name:** SEC-IoT  
-**Developed By:** *[Your Name]*  
+**Developed By:** SEC-IoT Team
+📌 Firmware Language: Arduino (ESP32)
 **Domain:** IoT • Security • Machine Learning  
 
 > *“Secure, Analyze, Predict — The Future of Industrial IoT”* 🚀
