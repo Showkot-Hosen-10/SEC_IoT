@@ -1,9 +1,3 @@
-
----
-title: "SEC-IoT - Secure Industrial IoT Monitoring & Analytics Platform"
-description: "ESP32 + Flask + XAMPP IoT Dashboard for Industrial Monitoring"
----
-
 # SEC-IoT  
 **Secure Industrial IoT Monitoring & Analytics Platform**
 
