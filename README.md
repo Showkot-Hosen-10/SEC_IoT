@@ -70,7 +70,68 @@ Below is the complete hardware connection diagram for the **SEC-IoT** system, sh
 ESP32 is **3.3V logic** — use voltage dividers where needed.
 
 ---
+# 🔧 Arduino IDE Requirements – SEC-IoT Firmware
 
+This document lists all **required Arduino IDE packages, libraries, and setup steps**
+needed to compile and upload the **SEC-IoT ESP32 firmware**.
+
+---
+
+## 🧠 Supported Hardware
+- **ESP32 Dev Module**
+- Arduino IDE **v1.8.x or v2.x**
+- WiFi Network: **2.4 GHz only**
+
+---
+
+## 1️⃣ Install Arduino IDE
+Download from:
+- https://www.arduino.cc/en/software
+
+---
+
+## 2️⃣ Add ESP32 Board Support (MANDATORY)
+
+### 📌 Board Manager URL
+Open **Arduino IDE → Preferences**  
+Add the following URL in **Additional Boards Manager URLs**:
+
+Then:
+
+1. Go to **Tools → Board → Boards Manager**
+2. Search: `ESP32`
+3. Install **"esp32 by Espressif Systems"**
+4. Select board:
+
+---
+
+## 3️⃣ Required Arduino Libraries
+
+Install these libraries via  
+**Sketch → Include Library → Manage Libraries**
+
+| Library Name | Author | Used For |
+|-------------|--------|---------|
+| DHT sensor library | Adafruit | DHT22 Temperature & Humidity |
+| Adafruit Unified Sensor | Adafruit | Dependency for DHT |
+| ArduinoJson | Benoit Blanchon | JSON payload generation |
+| WiFi | ESP32 Core | WiFi connectivity |
+| HTTPClient | ESP32 Core | HTTP POST to Flask API |
+
+📌 **ArduinoJson version:**  
+Recommended → **v6.x**
+
+---
+
+## 4️⃣ Verify Library Installation
+
+Your Arduino sketch uses:
+```cpp
+#include <WiFi.h>
+#include <HTTPClient.h>
+#include <ArduinoJson.h>
+#include <DHT.h>
+```
 ## 🗂️ Project Folder Structure
 
 ```
