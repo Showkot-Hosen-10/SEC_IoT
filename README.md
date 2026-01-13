@@ -17,7 +17,7 @@
 * [Network Requirements](#network-requirements)
 * [Running the Project](#running-the-project)
 * [API Endpoint](#api-endpoint)
-* [Quick Start](#automation-quick-start)
+* [Quick Start](#automation-&-quick-start)
 * [Future Work](#future-work)
 
 ---
@@ -278,7 +278,7 @@ POST http://<PC_IP>:5000/api/add_data
 ---
 
 ## Automation & Quick Start 
-*[run_n_go](run_n_go.md)
+Click *[run_n_go.md](run_n_go.md)
 ---
 
 ## Troubleshooting
