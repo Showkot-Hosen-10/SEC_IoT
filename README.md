@@ -17,7 +17,7 @@
 * [Network Requirements](#network-requirements)
 * [Running the Project](#running-the-project)
 * [API Endpoint](#api-endpoint)
-* [Quick Start](##quick-start)
+* [Quick Start](#quick-start)
 * [Future Work](#future-work)
 
 ---
