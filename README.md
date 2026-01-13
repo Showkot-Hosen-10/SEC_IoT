@@ -33,7 +33,7 @@ This project is developed for **academic, industrial automation, and research pu
 
 ---
 
-## 🧩 Hardware Connection Diagram
+## 🧩 Hardware Connection Diagram and Software Working
 
 Below is the complete hardware connection diagram for the **SEC-IoT** system, showing all sensor-to-ESP32 wiring.
 
