@@ -94,8 +94,8 @@ SEC-IoT/
 │   ├── profile.html
 │   └── admin.html
 │
-└── esp32/
-    └── esp32_firmware.ino
+└── Firmware/
+    └── IoT_Project_Firmware.ino
 ```
 
 ---
