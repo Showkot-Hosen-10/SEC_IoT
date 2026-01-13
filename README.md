@@ -277,31 +277,8 @@ POST http://<PC_IP>:5000/api/add_data
 
 ---
 
-## Automation & Quick Start
-
-### One-Click Setup (Windows)
-```
-1. Start XAMPP (Apache+MySQL)
-2. Double-click run_n_go.bat
-3. http://localhost:5000 opens automatically
-```
-
-**run_n_go.bat:**
-```batch
-@echo off
-echo Starting SEC-IoT...
-pip install -r requirements.txt
-python app.py
-pause
-```
-
-### Manual Setup
-```cmd
-cd SEC-IoT
-pip install -r requirements.txt
-python app.py
-```
-
+## Automation & Quick Start 
+*[run_n_go](run_n_go.md)
 ---
 
 ## Troubleshooting
