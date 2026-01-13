@@ -37,7 +37,7 @@ This project is developed for **academic, industrial automation, and research pu
 
 Below is the complete hardware connection diagram for the **SEC-IoT** system, showing all sensor-to-ESP32 wiring.
 
-![SEC-IoT Hardware Connection Diagram](IoT Project Diagram.png)
+![SEC-IoT Hardware Connection Diagram](IoT_Project_Diagram.png)
 
 > 📌 **Note:**  
 > - Ensure all sensors and ESP32 share a **common GND**  
