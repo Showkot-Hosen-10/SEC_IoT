@@ -33,6 +33,19 @@ This project is developed for **academic, industrial automation, and research pu
 
 ---
 
+## 🧩 Hardware Connection Diagram
+
+Below is the complete hardware connection diagram for the **SEC-IoT** system, showing all sensor-to-ESP32 wiring.
+
+![SEC-IoT Hardware Connection Diagram](IoT Project Diagram.png)
+
+> 📌 **Note:**  
+> - Ensure all sensors and ESP32 share a **common GND**  
+> - Use a **voltage divider** for HC-SR04 ECHO pin  
+> - Power ESP32 via **USB or VIN (5V)**  
+> - Use **3.3V only** for GPIO-safe sensors
+
+
 ## 🔌 Hardware Components Used with ESP32 Sensor Pin Mapping (SEC-IoT)
 
 | Sensor / Component | Sensor Pin | ESP32 GPIO | VCC | GND | Notes |
