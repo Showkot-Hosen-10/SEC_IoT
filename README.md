@@ -13,10 +13,10 @@ description: "ESP32 + Flask + XAMPP IoT Dashboard for Industrial Monitoring"
 
 * [SEC-IoT Overview](#sec-iot-overview)
 * [System Architecture](#system-architecture)
+* * [Project Folder Structure](#project-folder-structure)
 * [Hardware Connection](#hardware-connection)
 * [Hardware Pin Mapping](#hardware-pin-mapping)
 * [Arduino Firmware Setup](#arduino-firmware-setup)
-* [Project Folder Structure](#project-folder-structure)
 * [Database Schema](#database-schema)
 * [Software Requirements](#software-requirements)
 * [Methodology](#methodology)
