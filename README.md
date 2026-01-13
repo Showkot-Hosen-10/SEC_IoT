@@ -5,11 +5,10 @@
 
 I have updated the Index to include the new automated script and the hardware connection guide.
 
-* [📚 Index / Table of Contents](https://www.google.com/search?q=%23-index--table-of-contents)
-* [🔐 SEC-IoT Overview](https://www.google.com/search?q=%23-sec-iot)
-* [🏗️ System Architecture](https://www.google.com/search?q=%23-system-architecture)
-* [🔌 Hardware Mapping & Connections](https://www.google.com/search?q=%23-hardware-components-used-with-esp32-sensor-pin-mapping-sec-iot)
-* [🔧 Arduino Firmware Setup](https://www.google.com/search?q=%23-arduino-ide-requirements--sec-iot-firmware)
+* [🔐 SEC-IoT Overview](#🔐-SEC-IoT)
+* [🏗️ System Architecture](##-🏗️-System-Architecture)
+* [🔌 Hardware Mapping & Connections](##-🧩-Hardware-Connection-Diagram-and-Software-Working)
+* [🔧 Arduino Firmware Setup](#-🔧-Arduino-IDE-Requirements–SEC-IoT-Firmware)
 * [🗄️ Database Schema Details](https://www.google.com/search?q=%23-database-setup-xampp)
 * [🚀 Automation & Quick Start](https://www.google.com/search?q=%23-automation--quick-start)
 * [🏃 Manual CMD Setup (run_n_go.md)](https://www.google.com/search?q=./run_n_go.md)
