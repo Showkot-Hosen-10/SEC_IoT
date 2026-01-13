@@ -295,9 +295,7 @@ Click *[run_n_go.md](run_n_go.md)
 ## Future Work
 
 - 🧠 **ML Predictions** (LSTM, Prophet)
-- 🔍 **XAI** (SHAP/LIME explanations)
 - 🛡️ **IoT IDS** (anomaly detection)
-- ☁️ **Cloud** (AWS IoT Core)
 - 📱 **Mobile App** (Flutter)
 
 ---
