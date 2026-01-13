@@ -62,5 +62,3 @@ Once the flask server starts, open your browser and go to:
 * **Firewall:** If data isn't reaching Flask, allow Port 5000 in Windows Firewall.
 
 ---
-
-**Would you like me to generate the SQL script file separately so you can import it with a single command?**
