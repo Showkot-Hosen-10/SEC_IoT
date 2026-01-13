@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Live Sensor Dashboard</h2>
+    <div class="charts-container">
+        <div class="chart-box" id="ultrasonic_chart"></div>
+        <div class="chart-box" id="temperature_chart"></div>
+        <div class="chart-box" id="humidity_chart"></div>
+        <div class="chart-box" id="mq135_chart"></div>
+        <div class="chart-box" id="current_chart"></div>
+    </div>
+
+    <h2>Sensor Data Table</h2>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th><th>Ultrasonic</th><th>Temperature</th><th>Humidity</th><th>MQ135</th><th>Current</th><th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.ultrasonic }}</td>
+                    <td>{{ row.temperature }}</td>
+                    <td>{{ row.humidity }}</td>
+                    <td>{{ row.mq135 }}</td>
+                    <td>{{ row.current_mA }}</td>
+                    <td>{{ row.created_at }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+var data = {{ data|tojson }};
+var ids = data.map(x => x.id);
+var ultrasonic = data.map(x => x.ultrasonic);
+var temperature = data.map(x => x.temperature);
+var humidity = data.map(x => x.humidity);
+var mq135 = data.map(x => x.mq135);
+var current = data.map(x => x.current_mA);
+
+function createChart(divId, yData, title, color) {
+    Plotly.newPlot(divId, [{
+        x: ids, y: yData,
+        type: 'scatter', mode: 'lines+markers',
+        line: { color: color, width: 3 }
+    }], {
+        title: { text: title, font: {size:16, color: color} },
+        margin: { t: 40, l: 50, r: 20, b: 50 },
+        xaxis: { title: 'Reading ID', color: '#00ffff' },
+        yaxis: { title: title, color: '#00ffff' },
+        plot_bgcolor: '#1e1e2f',
+        paper_bgcolor: '#1e1e2f'
+    }, {responsive: true});
+}
+
+createChart('ultrasonic_chart', ultrasonic, 'Ultrasonic Distance (cm)', '#FF2D00');
+createChart('temperature_chart', temperature, 'Temperature (°C)', '#00FF7F');
+createChart('humidity_chart', humidity, 'Humidity (%)', '#FF00FF');
+createChart('mq135_chart', mq135, 'MQ135 Sensor', '#00FFFF');
+createChart('current_chart', current, 'Current (mA)', '#FFAA00');
+</script>
+{% endblock %}

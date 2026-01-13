@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h2>Admin Panel</h2>
+
+    <div class="admin-section">
+        <h3>Create User</h3>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <label><input type="checkbox" name="is_admin"> Admin Privileges</label>
+            <button type="submit">Create User</button>
+        </form>
+    </div>
+
+    <div class="user-table">
+        <h3>Users</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Username</th>
+                    <th>Admin</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <td>{{ user.id }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ 'Yes' if user.is_admin else 'No' }}</td>
+                    <td><a href="{{ url_for('delete_user', user_id=user.id) }}" class="delete-btn">Delete</a></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <div class="sensor-data">
+        <h3>Last 50 Sensor Readings</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Ultrasonic (cm)</th>
+                    <th>Temperature (°C)</th>
+                    <th>Humidity (%)</th>
+                    <th>MQ135</th>
+                    <th>Current (mA)</th>
+                    <th>Timestamp</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in data %}
+                <tr>
+                    <td>{{ row.id }}</td>
+                    <td>{{ row.ultrasonic }}</td>
+                    <td>{{ row.temperature }}</td>
+                    <td>{{ row.humidity }}</td>
+                    <td>{{ row.mq135 }}</td>
+                    <td>{{ row.current_mA }}</td>
+                    <td>{{ row.created_at }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

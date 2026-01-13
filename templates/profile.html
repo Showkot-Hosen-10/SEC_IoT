@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="profile-container">
+    <h2>User Profile</h2>
+    <div class="profile-box">
+        <p><strong>Username:</strong> {{ current_user.username }}</p>
+        <p><strong>Admin:</strong> {{ 'Yes' if current_user.is_admin else 'No' }}</p>
+    </div>
+</div>
+{% endblock %}
