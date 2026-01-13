@@ -3,10 +3,10 @@
 #include <ArduinoJson.h>
 #include <DHT.h>
 
-const char* ssid = "Huawei mate 20 pro";        // must be 2.4GHz
-const char* password = "huaweinet";
-const char* serverURL = "http://192.168.43.171:5000/api/add_data";
-
+const char* ssid = "Your_WiFi_SSID";        // must be 2.4GHz use mobile Hotspot
+const char* password = "Your_WiFi_Password";
+const char* serverURL = "http://Your_PC_ip:5000/api/add_data"; // use ipconfig command for windows pc in CMD to find your pc ip
+//Data PIN connection Defination
 #define DHTPIN 4
 #define DHTTYPE DHT22
 #define TRIG_PIN 5
@@ -87,3 +87,4 @@ void loop() {
 
   delay(5000);
 }
+
