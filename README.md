@@ -1,54 +1,7 @@
-This `run_n_go.bat` file will automate the entire process: creating the database, setting up the tables, installing Python dependencies, and launching the Flask server with a single double-click.
-
-### 📄 File: `run_n_go.bat`
-
-Copy the code below into a new file named `run_n_go.bat` in your project's root folder.
-
-```batch
-@echo off
-TITLE SEC-IoT Auto-Setup and Launch
-echo ---------------------------------------------------------
-echo SEC-IoT: Secure Industrial IoT Monitoring Platform
-echo ---------------------------------------------------------
-
-:: 1. Database & Table Setup
-echo [*] Initializing Database and Tables in XAMPP MySQL...
-mysql -u root -e "CREATE DATABASE IF NOT EXISTS iot_dashboard;"
-mysql -u root -D iot_dashboard -e "CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) UNIQUE NOT NULL, password VARCHAR(255) NOT NULL, is_admin BOOLEAN DEFAULT FALSE, profile_pic VARCHAR(255) DEFAULT 'default.png');"
-mysql -u root -D iot_dashboard -e "CREATE TABLE IF NOT EXISTS sensor_data (id INT AUTO_INCREMENT PRIMARY KEY, ultrasonic FLOAT, temperature FLOAT, humidity FLOAT, mq135 FLOAT, current_mA FLOAT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"
-
-:: 2. Python Environment Setup
-if not exist venv (
-    echo [*] Creating Virtual Environment...
-    python -m venv venv
-)
-
-echo [*] Activating Environment and Installing Requirements...
-call venv\Scripts\activate
-pip install -r requirements.txt
-
-:: 3. Launching App
-echo ---------------------------------------------------------
-echo [SUCCESS] Database ready and dependencies installed.
-echo [INFO] Starting Flask Server at http://localhost:5000
-echo [NOTE] Keep this window open while using the dashboard.
-echo ---------------------------------------------------------
-python app.py
-pause
-
-```
 
 ---
 
-### 📝 How to use it (Add this to your README/Run-n-Go)
-
-1. Ensure **XAMPP (Apache & MySQL)** is running.
-2. Double-click `run_n_go.bat`.
-3. The script will automatically detect if it's the first time running, set everything up, and open the server.
-
----
-
-### 🗂️ Updated Index for your `README.md`
+### 🗂️ SEC-IoT Project Index
 
 I have updated the Index to include the new automated script and the hardware connection guide.
 
