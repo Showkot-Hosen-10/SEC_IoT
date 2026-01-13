@@ -30,8 +30,14 @@ Open **XAMPP Control Panel**, start **Apache** and **MySQL**. Click **Shell** in
 :: 1. Clone and Enter Project
 git clone https://github.com/Showkot-Hosen-10/SEC_IoT.git && cd SEC_IoT
 
-:: 2. Create Database (Run this in XAMPP MySQL Shell or phpMyAdmin)
-mysql -u root -e "CREATE DATABASE iot_dashboard;"
+:: 2. Create Database
+mysql -u root -e "CREATE DATABASE IF NOT EXISTS iot_dashboard;"
+
+:: Create Users Table
+mysql -u root -D iot_dashboard -e "CREATE TABLE IF NOT EXISTS users (id INT AUTO_INCREMENT PRIMARY KEY, username VARCHAR(50) UNIQUE NOT NULL, password VARCHAR(255) NOT NULL, is_admin BOOLEAN DEFAULT FALSE, profile_pic VARCHAR(255) DEFAULT 'default.png');"
+
+:: Create Sensor Data Table
+mysql -u root -D iot_dashboard -e "CREATE TABLE IF NOT EXISTS sensor_data (id INT AUTO_INCREMENT PRIMARY KEY, ultrasonic FLOAT, temperature FLOAT, humidity FLOAT, mq135 FLOAT, current_mA FLOAT, created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP);"
 
 :: 3. Setup Python Environment & Dependencies
 python -m venv venv && venv\Scripts\activate
