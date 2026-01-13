@@ -16,7 +16,7 @@ This project is developed for **academic, industrial automation, and research pu
 - 🌙 Dark / ☀️ Light mode UI  
 - 👤 User authentication & profile management  
 - 🔐 Secure IoT-ready architecture  
-- 🧠 Future-ready for ML, XAI, and Security research  
+- 🧠 Future-ready for ML and Security research  
 
 ---
 
@@ -33,15 +33,25 @@ This project is developed for **academic, industrial automation, and research pu
 
 ---
 
-## 🔌 Hardware Components Used
+## 🔌 Hardware Components Used with ESP32 Sensor Pin Mapping (SEC-IoT)
 
-| Component | ESP32 Pin | VCC | GND | Notes |
-|---------|----------|-----|-----|------|
-| Ultrasonic Sensor (HC-SR04) | TRIG → GPIO | 5V | GND | Echo via voltage divider |
-| DHT11 / DHT22 | GPIO | 3.3V | GND | Temp & Humidity |
-| MQ-135 Gas Sensor | GPIO (ADC) | 5V | GND | Air quality |
-| Current Sensor (ACS712) | ADC Pin | 5V | GND | Current monitoring |
-| ESP32 | — | USB / 5V | GND | Main controller |
+| Sensor / Component | Sensor Pin | ESP32 GPIO | VCC | GND | Notes |
+|-------------------|-----------|------------|-----|-----|------|
+| **Ultrasonic Sensor (HC-SR04)** | TRIG | GPIO 5 | 3.3V | GND | Trigger pin |
+| | ECHO | GPIO 18 | 3.3V | GND | ⚠️ Use voltage divider |
+| | VCC | — | 3.3V | — | Avoid 5V on ESP32 |
+| | GND | — | — | GND | Common ground |
+| **Temperature & Humidity Sensor (DHT11 / DHT22)** | DATA | GPIO 4 | 3.3V | GND | Single-wire data |
+| | VCC | — | 3.3V | — | — |
+| | GND | — | — | GND | — |
+| **Gas Sensor (MQ-135)** | AO (Analog Out) | GPIO 34 (ADC) | 3.3V | GND | ADC-only pin |
+| | VCC | — | 3.3V | — | Stable ADC |
+| | GND | — | — | GND | — |
+| **Current Sensor (ACS712)** | OUT | GPIO 15 (ADC) | 5V (VIN) | GND | Output ≤ 3.3V |
+| | VCC | — | VIN (5V) | — | Powered via VIN |
+| | GND | — | — | GND | — |
+| **ESP32 Dev Board** | — | — | USB / VIN (5V) | GND | Main controller |
+
 
 ⚠️ **Important:**  
 ESP32 is **3.3V logic** — use voltage dividers where needed.
